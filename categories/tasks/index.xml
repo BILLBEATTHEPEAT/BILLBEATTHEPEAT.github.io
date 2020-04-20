@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tasks on Junbin Huang</title>
+    <link>https://billbeatthepeat.github.io/categories/tasks/</link>
+    <description>Recent content in Tasks on Junbin Huang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Apr 2020 14:32:50 -0700</lastBuildDate>
+    
+	<atom:link href="https://billbeatthepeat.github.io/categories/tasks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Currently_focus</title>
+      <link>https://billbeatthepeat.github.io/2020/currently-focus/</link>
+      <pubDate>Sun, 19 Apr 2020 14:32:50 -0700</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2020/currently-focus/</guid>
+      <description>Start date: 2020-01-01
+Recent Tasks  In Progress:  Coursera online course: Structuring Machine Learning Projects. Old version of Stanford database course: CS145 - Introduction to Databases [optional] CS346 - Spring 2007 Database System Implementation 《A First Course in Database System》 Documentary about western art history   Plan to do：  《Mathematics for Machine Learning》 Probability Course in CS109 or CS109. Linear Algebra in MIT 18.06. 《Fluent Python》. 《数据库查询优化器的艺术：原理解析与SQL性能优化》. OCR Papers with code, implemented in Pytorch/MxNet [Long-term running plan].</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://billbeatthepeat.github.io/2020/projects/</link>
+      <pubDate>Sun, 19 Apr 2020 14:31:24 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2020/projects/</guid>
+      <description>Lecture Notes  Stanford University, CS 131 Computer Vision: Foundations and Applications.  Note1,    Personal Project   Personal blog website BILLBEATTHEPEAT.github.io.
+ Based on Hexo framework and the Material theme. Contains my resume and CV. Contains my blog of notes, projects I am working on, papers I have read and some life details.    Interesting things. Contains something I thought interesting and can be done by coding.</description>
+    </item>
+    
+    <item>
+      <title>My Currently Reading Papers</title>
+      <link>https://billbeatthepeat.github.io/2020/my-currently-reading-paper/</link>
+      <pubDate>Sun, 19 Apr 2020 14:43:19 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2020/my-currently-reading-paper/</guid>
+      <description>I create this page to write down some notes and reflection about the research paper/blog I have read. Here are some of the most useful ones gathering from the recent project I am working on. They are separated by topics and projects. Some of the titles are followed by my brief comment which describe the mainly reason I choose them to put down here.
+The Emotion Recognition   Zheng W L, Lu B L.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="google-site-verification" content="dzraMol4fk4b15wv9pMw_wWCtD8m61QU4tGK-3BFGLQ" />
+  
+  
+  
+  <meta name=”baidu-site-verification” content="gvezHX9CB4" />
+  <link rel="prev" href="https://billbeatthepeat.github.io/2018/understanding-of-convolutional-layer/" />
+  <link rel="next" href="https://billbeatthepeat.github.io/2018/positional-notation-in-python/" />
+  <link rel="canonical" href="https://billbeatthepeat.github.io/2018/regularization-in-deep-learning/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Regularization in Deep Learning | Junbin Huang
+       
+  </title>
+  <meta name="title" content="Regularization in Deep Learning | Junbin Huang">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Regularization in Deep Learning"/>
+<meta name="twitter:description" content="0. Definition of Regularization One of the main goal in machine learning is to not only perform great in tranining set, but also get a good generalization in any test set. According to the book Deep Learning, regularization in deep learning can be described as an modification in learning model aims at reducing generalization error but not training error. Generally, there are two ways of adding regularization in the network. One is to apply extra restrction on the parameters, like $L_1$ and $L_1$, the other is to add an extra iterm in the objective funtions, like $Dropout$."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regularization in Deep Learning",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/billbeatthepeat.github.io\/2018\/regularization-in-deep-learning\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/billbeatthepeat.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  531 ,
+  "url": "https:\/\/billbeatthepeat.github.io\/2018\/regularization-in-deep-learning\/",
+  "datePublished": "2018-10-16T23:14:02\x2b00:00",
+  "dateModified": "2018-10-16T23:14:02\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Junbin Huang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/billbeatthepeat.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Junbin Huang"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://billbeatthepeat.github.io/">Junbin Huang</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/IMG_1825.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                Artificial Intelligence is the new electricity. -- Andrew Ng
+            
+        
+        </a></p>
+        </div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://billbeatthepeat.github.io/">Junbin Huang</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Regularization in Deep Learning</h1>
+        <div class="post-meta">
+                <span class="post-time">
+                    on <time datetime=2018-10-16 >16 October 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://billbeatthepeat.github.io/categories/machine-learning/"> Machine Learning </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                3 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="0-definition-of-regularization">0. Definition of Regularization</h3>
+<p>One of the main goal in machine learning is to not only perform great in tranining set, but also get a good generalization in any test set. According to the book Deep Learning, regularization in deep learning can be described as an modification in learning model aims at reducing generalization error but not training error. Generally, there are two ways of adding regularization in the network. One is to apply extra restrction on the parameters, like $L_1$ and $L_1$, the other is to add an extra iterm in the objective funtions, like $Dropout$.</p>
+<p>Under deep leanring background, most of the regularization strategies apply on the estimation/output. This is helpful in trading bias with an improvement in variance. A good regularization is a good trade in significantly decreasing the variance with a slightly increasing in the bias.</p>
+<h3 id="1-parametars-norm-penalties">1. Parametars Norm Penalties</h3>
+<p>Many regularization approaches are based on limiting the capacity of models,such as neural networks, linear regression, or logistic regression, by adding a pa-rameter norm penalty $\Omega(\theta)$ to the objective function $J$. It can be describe as:
+\begin{equation}
+\bar{J}(\theta;X,y) = J(\theta;X,y)+\alpha\Omega(\theta)
+\end{equation}
+where $\alpha \in [0, \infty)$ is a hyperparameter that weights the relative contribution of thenorm penalty term, $\Omega$, relative to the standard objective function $J$. When our trainig algorithm minimizes the regulized objective $\bar{J}$, it will reduce the original objective $J$ w.r.t. the training error and in the mean time reduce some of the measure of the size of $\theta$.</p>
+<p>To be noticed, in neural network the word &ldquo;parameter&rdquo; describe all the bias and weights in each layer. However, when doing regularization we only apply our method on the weights $w$ without bias. This is because we need much more datas to train to get a precise weight which denote the relationship between two variables than those we need to get a correct bias value. Thus we need to observe the variables in a variety of conditions for the fitting. On the contrary, one bias effect one variable which means the variance will be trivial even without regularization. What is more, regularized bias might result in under-fitting. Therefore, we only apply regularization on the weights but not bias.</p>
+<h4 id="11-l_2-regularization">1.1 $L_2$ Regularization</h4>
+<p>$L_2$ parameter norm penalty, also known as <strong>weight decay</strong>, <strong>ridge regression</strong> or <strong>Tikhonov regularization</strong>, is to add a norm item $\Omega(\theta) = \frac{1}{2}||w||_2^2$. This regularization drag the weight vector closer to the origin.<br>
+In short, $L_2$ regularization has modiﬁed the learningrule to multiplicatively shrink the weight vector by a constant factor on each step,just before performing the usual gradient update. As a result, only directions along which the parameters contribute signiﬁcantly to reducingthe objective function are preserved relatively intact. In directions that do notcontribute to reducing the objective function, a small eigenvalue of the Hessiantells us that movement in this direction will not signiﬁcantly increase the gradient.Components of the weight vector corresponding to such unimportant directionsare decayed away through the use of the regularization throughout training. What is more, $L_2$ regularization helps the learning algorithm to &ldquo;perceive&rdquo; the input $X$ as having higher variance, which makes it shrink the weights on features whose covariance with the output target is low (compared to the added variance).</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Junbin Huang </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>531</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fregularization-in-deep-learning%2f&amp;text=Regularization%20in%20Deep%20Learning&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fregularization-in-deep-learning%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fregularization-in-deep-learning%2f&amp;title=Regularization%20in%20Deep%20Learning" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://billbeatthepeat.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://billbeatthepeat.github.io/2018/understanding-of-convolutional-layer/" class="prev" rel="prev" title="Understanding of Convolutional Layer"><i class="iconfont icon-dajiantou"></i>&nbsp;Understanding of Convolutional Layer</a>
+         
+        
+        <a href="https://billbeatthepeat.github.io/2018/positional-notation-in-python/" class="next" rel="next" title="Positional Notations in Python">Positional Notations in Python&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'jhuan129';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://billbeatthepeat.github.io/">Junbin Huang</a> | </span>
+         
+
+		  <span>Supported by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

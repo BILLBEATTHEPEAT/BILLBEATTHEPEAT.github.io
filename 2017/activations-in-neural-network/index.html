@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="google-site-verification" content="dzraMol4fk4b15wv9pMw_wWCtD8m61QU4tGK-3BFGLQ" />
+  
+  
+  
+  <meta name=”baidu-site-verification” content="gvezHX9CB4" />
+  <link rel="prev" href="https://billbeatthepeat.github.io/2017/trade-off-of-batch-size/" />
+  <link rel="next" href="https://billbeatthepeat.github.io/2017/little-skills/" />
+  <link rel="canonical" href="https://billbeatthepeat.github.io/2017/activations-in-neural-network/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Activations in Neural Network | Junbin Huang
+       
+  </title>
+  <meta name="title" content="Activations in Neural Network | Junbin Huang">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Activations in Neural Network"/>
+<meta name="twitter:description" content="Instruction All of us have encountered with the problem of choosing an activation function during the building of neural network models. But what is activation functions, why we should use them and which should we choose in the network? Here is some of the summary or notes wrote after reading the blog and the discussion.
+0. Structure  What? Why? Which? Reference  1. What is Activation Function  In biologically inspired neural networks, the activation function is usually an abstraction representing the rate of action potential firing in the cell."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Activations in Neural Network",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/billbeatthepeat.github.io\/2017\/activations-in-neural-network\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/billbeatthepeat.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  647 ,
+  "url": "https:\/\/billbeatthepeat.github.io\/2017\/activations-in-neural-network\/",
+  "datePublished": "2017-09-15T11:31:38\x2b00:00",
+  "dateModified": "2017-09-15T11:31:38\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Junbin Huang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/billbeatthepeat.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Junbin Huang"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://billbeatthepeat.github.io/">Junbin Huang</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/IMG_1825.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                Artificial Intelligence is the new electricity. -- Andrew Ng
+            
+        
+        </a></p>
+        </div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://billbeatthepeat.github.io/">Junbin Huang</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Activations in Neural Network</h1>
+        <div class="post-meta">
+                <span class="post-time">
+                    on <time datetime=2017-09-15 >15 September 2017</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://billbeatthepeat.github.io/categories/machine-learning/"> Machine Learning </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                4 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="instruction">Instruction</h3>
+<p>All of us have encountered with the problem of choosing an activation function during the building of neural network models. But what is activation functions, why we should use them and which should we choose in the network? Here is some of the summary or notes wrote after reading the <a href="http://blog.csdn.net/cyh_24/article/details/50593400">blog</a> and the <a href="https://www.zhihu.com/question/22334626">discussion</a>.</p>
+<h3 id="0-structure">0. Structure</h3>
+<ol>
+<li>What?</li>
+<li>Why?</li>
+<li>Which?</li>
+<li>Reference</li>
+</ol>
+<h3 id="1-what-is-activation-function">1. What is Activation Function</h3>
+<blockquote>
+<p>In biologically inspired neural networks, the activation function is usually an abstraction representing the rate of action potential firing in the cell.                         &mdash;-Wikipedia</p>
+</blockquote>
+<p>Activation function can be translated as “激活函数/激励函数” in Chinese. As my favorate, &ldquo;激活函数&rdquo; which can denotes the revival of the neuron and embodies the imitated-biological characteristic of the neural network is the best. This translation makes me feel the network is really &ldquo;alive(活的)&quot;!</p>
+<p>Well, back to business, what is the so-called activation function? See the following picture. The left part (till the summation function) is a simple perceptron which takes the sum of the weighted input and then generate an output value. Then a step function is applied to the weighted sum. This function that has been applied tho the weighted sum of the input of an neutron is defined as the <strong>activation function</strong>.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/1667471-6d3b43bce94b33de.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h3 id="2-why-we-use-activation-function">2. Why We Use Activation Function</h3>
+<p>According to the discussion <a href="https://www.zhihu.com/question/22334626">here</a>, the reason why we should apply activation functions in the nueral network is that we need this network to handle non-linear problems. Look back to the picture above, a single perceptron without acivation can be seen as a box which can output the linear combination of its input. It is only linearly solvable. This model is good enought to solve the classification problem like the left picture shown as below:</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/afdef2420ca2bb8d5972f33d6d433e9d_r.jpg" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/c88498a754cc7766217e2a57370be03_r.jpg" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>However, we cannot count on a simple perceptron to deal with complex problems, especially the non-lieanrly-separable problem like the right picture above.</p>
+<p>This is because of the intrinsic structure of the perceptron. The output is a weighted linear combination of the input. So it cannot explain non-linear results, even if we form a network. Look at the left picture shown below.</p>
+<p>Now, Our main character comes on stage. See the picture on he right. When we apply the activation function with a threshold to the output of the linear combination, the output of the perceptron will become a non-linear result of the input due to the non-linearity of the activation function. It transform the linear combination to a non-linear one! And, unfortunately, seems no one can tell the exact transform function between the input and output of the neuron at least till now.</p>
+<p>BUT! The good thing is, we can use the neural network to deal with problems more complicated than just the linear part.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/ef7eb0f56730058e1100dd6605eb2a25_r.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/3e4d3aabb90f51f467437a17861d3bf7_r.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h3 id="3-which-one-to-choose">3. Which one to choose</h3>
+<p>Have said too much above, so JUST SHOW THE PIC!</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/blog-ac1.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>$$f(z) = \frac{1}{1+e^{-z}}$$
+Range of Value: (0,1).<br>
+<strong>Advantage</strong>: Works good when the difference between features are very large or trivial.
+<strong>Disadvantage</strong>: Need large amount of calculation when calculating the derivaion during backward propagation. Prone to generate the gradient vanishing.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/1667471-d2c5493f3380d6f2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h5 id="tanh">Tanh</h5>
+<p>$$f(z) = tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}$$
+$$tanh(x) = 2sigmoid(2x) - 1$$
+Range of Value: [-1,1].<br>
+<strong>Advantage</strong>: Good at the case of large difference between features. Its average/expectation is 0, so it will work better than sigmoid - converging faster. <strong>Disadvantage</strong>: the gradient vanishing still exist.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/1667471-dbf53f4ef0fcba51.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h5 id="relu">Relu</h5>
+<p>$$\phi (x) = max(0,x)$$
+Range of Value: [0,+∞).<br>
+<strong>Advantage</strong>: linear, unsaturate; less cost of calculation; less possible of gradient vanishing; works good even in the unsuperviced leanring; provides the ability of sparse expression. <strong>Disadvantage</strong>: easy to die when feeding into a large learning rate.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/Activations-in-Neural-Network/1015872-20161111173702217-558562359.jpg" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h5 id="leaky-relu-p-relu-r-relu">Leaky-Relu, P-Relu, R-Relu</h5>
+<p>Advanced/modified version of Relu. Which try to avoid the gradient vanishing and the &ldquo;death&rdquo; of neuron. More infor see the official document of <a href="https://www.tensorflow.org/versions/r0.12/api_docs/python/nn/activation_functions_">TensorFlow</a> and <a href="https://keras.io/layers/advanced-activations/">Keras</a>.</p>
+<h3 id="reference">Reference</h3>
+<ol>
+<li>Wikipedia, <a href="https://en.wikipedia.org/wiki/Activation_function">https://en.wikipedia.org/wiki/Activation_function</a></li>
+<li>Discussion in Zhihu, <a href="https://www.zhihu.com/question/22334626">https://www.zhihu.com/question/22334626</a></li>
+<li>神经网络-激活函数-面面观(Activation Function), <a href="http://blog.csdn.net/cyh_24/article/details/50593400">http://blog.csdn.net/cyh_24/article/details/50593400</a></li>
+<li>常用激活函数比较, <a href="http://www.jianshu.com/p/22d9720dbf1a">http://www.jianshu.com/p/22d9720dbf1a</a></li>
+<li>浅谈深度学习中的激活函数 - The Activation Function in Deep Learning, <a href="http://www.cnblogs.com/rgvb178/p/6055213.html">http://www.cnblogs.com/rgvb178/p/6055213.html</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Junbin Huang </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>647</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2017%2factivations-in-neural-network%2f&amp;text=Activations%20in%20Neural%20Network&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillbeatthepeat.github.io%2f2017%2factivations-in-neural-network%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2017%2factivations-in-neural-network%2f&amp;title=Activations%20in%20Neural%20Network" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://billbeatthepeat.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://billbeatthepeat.github.io/2017/trade-off-of-batch-size/" class="prev" rel="prev" title="Trade-off of Batch Size"><i class="iconfont icon-dajiantou"></i>&nbsp;Trade-off of Batch Size</a>
+         
+        
+        <a href="https://billbeatthepeat.github.io/2017/little-skills/" class="next" rel="next" title="Little Skills">Little Skills&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'jhuan129';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://billbeatthepeat.github.io/">Junbin Huang</a> | </span>
+         
+
+		  <span>Supported by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

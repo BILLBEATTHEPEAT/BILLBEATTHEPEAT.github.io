@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Junbin Huang</title>
+    <link>https://billbeatthepeat.github.io/categories/python/</link>
+    <description>Recent content in Python on Junbin Huang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Oct 2018 11:47:22 +0000</lastBuildDate>
+    
+	<atom:link href="https://billbeatthepeat.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Correct methods to &#39;copy&#39; a list in Python</title>
+      <link>https://billbeatthepeat.github.io/2018/correct-methods-to-copy-a-list-in-python/</link>
+      <pubDate>Sat, 27 Oct 2018 11:47:22 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2018/correct-methods-to-copy-a-list-in-python/</guid>
+      <description>&amp;gt;&amp;gt;&amp;gt; import copy &amp;gt;&amp;gt;&amp;gt; a = [[10], 20] &amp;gt;&amp;gt;&amp;gt; b = a[:] &amp;gt;&amp;gt;&amp;gt; c = list(a) &amp;gt;&amp;gt;&amp;gt; d = a * 1 &amp;gt;&amp;gt;&amp;gt; e = copy.copy(a) &amp;gt;&amp;gt;&amp;gt; f = copy.deepcopy(a) &amp;gt;&amp;gt;&amp;gt; a.append(21) &amp;gt;&amp;gt;&amp;gt; a[0].append(11) &amp;gt;&amp;gt;&amp;gt; print id(a), a 30553152 [[10, 11], 20, 21] &amp;gt;&amp;gt;&amp;gt; print id(b), b 44969816 [[10, 11], 20] &amp;gt;&amp;gt;&amp;gt; print id(c), c 44855664 [[10, 11], 20] &amp;gt;&amp;gt;&amp;gt; print id(d), d 44971832 [[10, 11], 20] &amp;gt;&amp;gt;&amp;gt; print id(e), e 44833088 [[10, 11], 20] &amp;gt;&amp;gt;&amp;gt; print id(f), f 44834648 [[10], 20] Note that when using a[:], a*1, copy.</description>
+    </item>
+    
+    <item>
+      <title>Positional Notations in Python</title>
+      <link>https://billbeatthepeat.github.io/2018/positional-notation-in-python/</link>
+      <pubDate>Sat, 27 Oct 2018 11:44:10 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2018/positional-notation-in-python/</guid>
+      <description>1. Hexadecimal to decimal: &amp;gt;&amp;gt;&amp;gt; int(&amp;#39;0xf&amp;#39;,16) 15 2. Binary to decimal: &amp;gt;&amp;gt;&amp;gt; int(&amp;#39;10100111110&amp;#39;,2) 1342 3. Octonary to decimal: &amp;gt;&amp;gt;&amp;gt; int(&amp;#39;17&amp;#39;,8) 15 4. Decimal to hexadecimal: &amp;gt;&amp;gt;&amp;gt; hex(1033) &amp;#39;0x409&amp;#39; 5. Binary to hexadecimal: &amp;gt;&amp;gt;&amp;gt; hex(int(&amp;#39;101010&amp;#39;,2)) &amp;#39;0x2a&amp;#39; 6. Octonary to hexadecimal: &amp;gt;&amp;gt;&amp;gt; hex(int(&amp;#39;17&amp;#39;,8)) &amp;#39;0xf&amp;#39; 7. Decimal to binary: &amp;gt;&amp;gt;&amp;gt; bin(10) &amp;#39;0b1010&amp;#39; 8. Hexadecimal to binary: &amp;gt;&amp;gt;&amp;gt; bin(int(&amp;#39;ff&amp;#39;,16)) &amp;#39;0b11111111&amp;#39; 9. Octonary to binary: &amp;gt;&amp;gt;&amp;gt; bin(int(&amp;#39;17&amp;#39;,8)) &amp;#39;0b1111&amp;#39; 10. Binary to octonary: &amp;gt;&amp;gt;&amp;gt; oct(0b1010) &amp;#39;012&amp;#39; 11.</description>
+    </item>
+    
+  </channel>
+</rss>

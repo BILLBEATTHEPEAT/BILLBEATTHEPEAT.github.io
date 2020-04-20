@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="google-site-verification" content="dzraMol4fk4b15wv9pMw_wWCtD8m61QU4tGK-3BFGLQ" />
+  
+  
+  
+  <meta name=”baidu-site-verification” content="gvezHX9CB4" />
+  <link rel="prev" href="https://billbeatthepeat.github.io/2017/ensemble-methods/" />
+  <link rel="next" href="https://billbeatthepeat.github.io/2018/heuristic-function/" />
+  <link rel="canonical" href="https://billbeatthepeat.github.io/2018/logistic-regression-derived-from-linear-regression/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Logistic Regression Derived From Linear Regression | Junbin Huang
+       
+  </title>
+  <meta name="title" content="Logistic Regression Derived From Linear Regression | Junbin Huang">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Logistic Regression Derived From Linear Regression"/>
+<meta name="twitter:description" content="Logistics Regression 的推导（from Linear Regression） 线性回归和逻辑回归是机器学习算法中常用的两种算法，分别用于回归预测和分类问题。对于回归问题，当回归的目标变量变为离散且有限的变量时，回归问题就可以简化为分类问题，故而分类问题可以看作是回归问题在某种条件下的特例。故而，我们也可以从一些回归问题的模型中推导出分类问题的模型。本文中就将从回归问题中的简单模型 —— 线性回归（linear regression）推导出简单的分类模型逻辑回归（logistic regression）。
+在简单的二分类问题中，目标值分别为 1 和 0 （或 1 和 -1）。故而可以将这种二分类任务简单地理解成估计某一事件发生的概率 P，通过对这一概率的大小的区别来达到分类的目的。因此，根据概率的定义，模型输出值$y_i$的取值范围必须满足$$0 &lt; y_i &lt; 1,\ 且 \sum_i y_i = 1.$$
+然而，根据我们对线性回归模型的了解:$$P = f_\theta(x) = \theta^T x,$$输出值的范围应该是在$[-inf, &#43;inf]$之间，很明显不满足于分类，尤其是二分类问题的要求。 所以为了使得线性模型在分类问题中可用，我们应该对其输出值做出限定，即：$$logistic(x) = g(f_\theta (x)) = g(\theta^T x)$$。接下来是对$g(x)$的推导。
+我们可以从反面考虑，通过对分类模型的因变量值域限制的移除进行变换来反推出我们所需要的$g(x)$。
+首先，选用优势比 Odds 代替概率。优势比就是时间发生概率和不发生概率之间的比值，记作：$$odds = \frac{P}{1-P}$$。通过改变换，我们可以将[0,1]之间的任意数映射到[0, &#43;inf]之间的任意实数。但是线性回归的输出还可以是负数，故而还需要另一步变换将[0,inf]的实数域映射到整个实数域空间。
+在众多非线性函数中，log函数的值域为整个实数域且单调，因此可以通过计算优势比的对数，得到前面所需要的变换： $$\eta = log(odds) = log\frac{P}{1-P} = logit(P),$$ 其中logit函数表示分对数。经过以上两步，我们已经将因变量的值域限制去掉，即将因变量的值域[0，1]，映射到了一个[-inf, &#43;inf]上。如果概率等于0，那么优势比为0，logit的值为-inf；如果概率等于1，那么优势比为&#43;inf，logit的值也为&#43;inf，当概率值小于0.5时，logit的值为负数，反之，为正数。
+接着，我们可以通过反推，从线性回归的模型函数中得到逻辑回归的模型的数学表达： $$logit(p) = log(\frac{p}{1-p}) = \eta = f_\theta(x) = \theta^T x,$$ $$\Rightarrow p = g(x) = antilogit(x)$$ $$\Rightarrow \frac{p}{1-p} = e^\eta$$ $$\Rightarrow p = \frac{e^\eta}{1 &#43; e^\eta} = \frac{e^{\theta^T \cdot x}}{1 &#43; e^{\theta^T \cdot x}} = sigmoid(x)$$"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Logistic Regression Derived From Linear Regression",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/billbeatthepeat.github.io\/2018\/logistic-regression-derived-from-linear-regression\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/billbeatthepeat.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  109 ,
+  "url": "https:\/\/billbeatthepeat.github.io\/2018\/logistic-regression-derived-from-linear-regression\/",
+  "datePublished": "2018-01-13T13:14:50\x2b00:00",
+  "dateModified": "2018-01-13T13:14:50\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Junbin Huang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/billbeatthepeat.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Junbin Huang"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://billbeatthepeat.github.io/">Junbin Huang</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/IMG_1825.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                Artificial Intelligence is the new electricity. -- Andrew Ng
+            
+        
+        </a></p>
+        </div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://billbeatthepeat.github.io/">Junbin Huang</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Logistic Regression Derived From Linear Regression</h1>
+        <div class="post-meta">
+                <span class="post-time">
+                    on <time datetime=2018-01-13 >13 January 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://billbeatthepeat.github.io/categories/machine-learning/"> Machine Learning </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="logistics-regression-的推导from-linear-regression">Logistics Regression 的推导（from Linear Regression）</h3>
+<p>线性回归和逻辑回归是机器学习算法中常用的两种算法，分别用于回归预测和分类问题。对于回归问题，当回归的目标变量变为离散且有限的变量时，回归问题就可以简化为分类问题，故而分类问题可以看作是回归问题在某种条件下的特例。故而，我们也可以从一些回归问题的模型中推导出分类问题的模型。本文中就将从回归问题中的简单模型 —— 线性回归（linear regression）推导出简单的分类模型逻辑回归（logistic regression）。</p>
+<p>在简单的二分类问题中，目标值分别为 1 和 0 （或 1 和 -1）。故而可以将这种二分类任务简单地理解成估计某一事件发生的概率 <strong>P</strong>，通过对这一概率的大小的区别来达到分类的目的。因此，根据概率的定义，模型输出值$y_i$的取值范围必须满足$$0 &lt; y_i &lt; 1,\ 且 \sum_i y_i = 1.$$</p>
+<p>然而，根据我们对线性回归模型的了解:$$P = f_\theta(x) =  \theta^T x,$$输出值的范围应该是在$[-inf, +inf]$之间，很明显不满足于分类，尤其是二分类问题的要求。 所以为了使得线性模型在分类问题中可用，我们应该对其输出值做出限定，即：$$logistic(x) = g(f_\theta (x)) = g(\theta^T x)$$。接下来是对$g(x)$的推导。</p>
+<p>我们可以从反面考虑，通过对分类模型的因变量值域限制的移除进行变换来反推出我们所需要的$g(x)$。</p>
+<p>首先，选用优势比 Odds 代替概率。优势比就是时间发生概率和不发生概率之间的比值，记作：$$odds = \frac{P}{1-P}$$。通过改变换，我们可以将[0,1]之间的任意数映射到[0, +inf]之间的任意实数。但是线性回归的输出还可以是负数，故而还需要另一步变换将[0,inf]的实数域映射到整个实数域空间。</p>
+<p>在众多非线性函数中，log函数的值域为整个实数域且单调，因此可以通过计算优势比的对数，得到前面所需要的变换：
+$$\eta = log(odds) = log\frac{P}{1-P} = logit(P),$$
+其中logit函数表示分对数。经过以上两步，我们已经将因变量的值域限制去掉，即将因变量的值域[0，1]，映射到了一个[-inf, +inf]上。如果概率等于0，那么优势比为0，logit的值为-inf；如果概率等于1，那么优势比为+inf，logit的值也为+inf，当概率值小于0.5时，logit的值为负数，反之，为正数。</p>
+<p>接着，我们可以通过反推，从线性回归的模型函数中得到逻辑回归的模型的数学表达：
+$$logit(p) = log(\frac{p}{1-p}) = \eta = f_\theta(x) = \theta^T x,$$
+$$\Rightarrow p = g(x) = antilogit(x)$$
+$$\Rightarrow \frac{p}{1-p} = e^\eta$$
+$$\Rightarrow p = \frac{e^\eta}{1 + e^\eta} = \frac{e^{\theta^T \cdot x}}{1 + e^{\theta^T \cdot x}} = sigmoid(x)$$</p>
+<p>讲到这里，还有一个问题是为什么要选用sigmoid函数呢？为什么不选用其他函数，如probit函数？
+其实，无论是sigmoid函数还是probit函数都是广义线性模型的连接函数（link function）中的一种。选用联接函数是因为，从统计学角度而言，普通线性回归模型是基于响应变量和误差项均服从正态分布的假设，且误差项具有零均值，同方差的特性。但是，例如分类任务（判断肿瘤是否为良性、判断邮件是否为垃圾邮件），其响应变量一般不服从于正态分布，其服从于二项分布，所以选用普通线性回归模型来拟合是不准确的，因为不符合假设，所以，我们需要选用广义线性模型来拟合数据，通过标准联接函数(canonical link or standard link function)来映射响应变量，如：正态分布对应于恒等式，泊松分布对应于自然对数函数，二项分布对应于logit函数（二项分布是特殊的泊松分布）。</p>
+<h4 id="reference">Reference：</h4>
+<p><a href="http://www.hanlongfei.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/2015/08/05/mle/">机器学习－逻辑回归与最大似然估计 by Longfei Han</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Junbin Huang </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>109</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2flogistic-regression-derived-from-linear-regression%2f&amp;text=Logistic%20Regression%20Derived%20From%20Linear%20Regression&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2flogistic-regression-derived-from-linear-regression%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2flogistic-regression-derived-from-linear-regression%2f&amp;title=Logistic%20Regression%20Derived%20From%20Linear%20Regression" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://billbeatthepeat.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://billbeatthepeat.github.io/2017/ensemble-methods/" class="prev" rel="prev" title="Ensemble Methods"><i class="iconfont icon-dajiantou"></i>&nbsp;Ensemble Methods</a>
+         
+        
+        <a href="https://billbeatthepeat.github.io/2018/heuristic-function/" class="next" rel="next" title="Heuristic Function">Heuristic Function&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'jhuan129';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://billbeatthepeat.github.io/">Junbin Huang</a> | </span>
+         
+
+		  <span>Supported by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="google-site-verification" content="dzraMol4fk4b15wv9pMw_wWCtD8m61QU4tGK-3BFGLQ" />
+  
+  
+  
+  <meta name=”baidu-site-verification” content="gvezHX9CB4" />
+  <link rel="prev" href="https://billbeatthepeat.github.io/2018/positional-notation-in-python/" />
+  <link rel="next" href="https://billbeatthepeat.github.io/2019/what-is-the-risk-in-ml/" />
+  <link rel="canonical" href="https://billbeatthepeat.github.io/2018/correct-methods-to-copy-a-list-in-python/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Correct methods to &#39;copy&#39; a list in Python | Junbin Huang
+       
+  </title>
+  <meta name="title" content="Correct methods to &#39;copy&#39; a list in Python | Junbin Huang">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Correct methods to &#39;copy&#39; a list in Python"/>
+<meta name="twitter:description" content="&gt;&gt;&gt; import copy &gt;&gt;&gt; a = [[10], 20] &gt;&gt;&gt; b = a[:] &gt;&gt;&gt; c = list(a) &gt;&gt;&gt; d = a * 1 &gt;&gt;&gt; e = copy.copy(a) &gt;&gt;&gt; f = copy.deepcopy(a) &gt;&gt;&gt; a.append(21) &gt;&gt;&gt; a[0].append(11) &gt;&gt;&gt; print id(a), a 30553152 [[10, 11], 20, 21] &gt;&gt;&gt; print id(b), b 44969816 [[10, 11], 20] &gt;&gt;&gt; print id(c), c 44855664 [[10, 11], 20] &gt;&gt;&gt; print id(d), d 44971832 [[10, 11], 20] &gt;&gt;&gt; print id(e), e 44833088 [[10, 11], 20] &gt;&gt;&gt; print id(f), f 44834648 [[10], 20] Note that when using a[:], a*1, copy."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Correct methods to \x27copy\x27 a list in Python",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/billbeatthepeat.github.io\/2018\/correct-methods-to-copy-a-list-in-python\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/billbeatthepeat.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  148 ,
+  "url": "https:\/\/billbeatthepeat.github.io\/2018\/correct-methods-to-copy-a-list-in-python\/",
+  "datePublished": "2018-10-27T11:47:22\x2b00:00",
+  "dateModified": "2018-10-27T11:47:22\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Junbin Huang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/billbeatthepeat.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Junbin Huang"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://billbeatthepeat.github.io/">Junbin Huang</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/IMG_1825.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                Artificial Intelligence is the new electricity. -- Andrew Ng
+            
+        
+        </a></p>
+        </div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://billbeatthepeat.github.io/">Junbin Huang</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Correct methods to &#39;copy&#39; a list in Python</h1>
+        <div class="post-meta">
+                <span class="post-time">
+                    on <time datetime=2018-10-27 >27 October 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://billbeatthepeat.github.io/categories/python/"> Python </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <pre><code>&gt;&gt;&gt; import copy
+&gt;&gt;&gt; a = [[10], 20]
+&gt;&gt;&gt; b = a[:]
+&gt;&gt;&gt; c = list(a)
+&gt;&gt;&gt; d = a * 1
+&gt;&gt;&gt; e = copy.copy(a)
+&gt;&gt;&gt; f = copy.deepcopy(a)
+&gt;&gt;&gt; a.append(21)
+&gt;&gt;&gt; a[0].append(11)
+&gt;&gt;&gt; print id(a), a
+30553152 [[10, 11], 20, 21]
+&gt;&gt;&gt; print id(b), b
+44969816 [[10, 11], 20]
+&gt;&gt;&gt; print id(c), c
+44855664 [[10, 11], 20]
+&gt;&gt;&gt; print id(d), d
+44971832 [[10, 11], 20]
+&gt;&gt;&gt; print id(e), e
+44833088 [[10, 11], 20]
+&gt;&gt;&gt; print id(f), f
+44834648 [[10], 20]
+</code></pre><p>Note that when using a[:], a*1, copy.copy(a) to copy a list we can get a brand new list. However, these methods fail while we want to copy a list consists of bunch of lists as elements. Since the elements of new lists generated by these methods are still the points to original lists, they will cause problem. The only correct method is copy.deepcopy(a) under this situation.</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Junbin Huang </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>148</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fcorrect-methods-to-copy-a-list-in-python%2f&amp;text=Correct%20methods%20to%20%27copy%27%20a%20list%20in%20Python&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fcorrect-methods-to-copy-a-list-in-python%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fcorrect-methods-to-copy-a-list-in-python%2f&amp;title=Correct%20methods%20to%20%27copy%27%20a%20list%20in%20Python" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://billbeatthepeat.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://billbeatthepeat.github.io/2018/positional-notation-in-python/" class="prev" rel="prev" title="Positional Notations in Python"><i class="iconfont icon-dajiantou"></i>&nbsp;Positional Notations in Python</a>
+         
+        
+        <a href="https://billbeatthepeat.github.io/2019/what-is-the-risk-in-ml/" class="next" rel="next" title="What is the &#39;Risk&#39; in ML">What is the &#39;Risk&#39; in ML&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'jhuan129';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://billbeatthepeat.github.io/">Junbin Huang</a> | </span>
+         
+
+		  <span>Supported by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

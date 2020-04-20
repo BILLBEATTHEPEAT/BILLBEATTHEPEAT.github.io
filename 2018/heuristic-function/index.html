@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="google-site-verification" content="dzraMol4fk4b15wv9pMw_wWCtD8m61QU4tGK-3BFGLQ" />
+  
+  
+  
+  <meta name=”baidu-site-verification” content="gvezHX9CB4" />
+  <link rel="prev" href="https://billbeatthepeat.github.io/2018/logistic-regression-derived-from-linear-regression/" />
+  <link rel="next" href="https://billbeatthepeat.github.io/2018/understanding-of-convolutional-layer/" />
+  <link rel="canonical" href="https://billbeatthepeat.github.io/2018/heuristic-function/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Heuristic Function | Junbin Huang
+       
+  </title>
+  <meta name="title" content="Heuristic Function | Junbin Huang">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Heuristic Function"/>
+<meta name="twitter:description" content="This blog is a simple summary about heuristic function for the lectrure CS118.
+1. Definition of Heuristic function According to the Wikipedia, a heuristic method in computer science, especially in artificial intelligence, is a function used to boost the speed of solving a problem or finding an approximate solution when classic methods fails to find any exact solution. &ldquo;This is achieved by trading optimality, completeness, accuracy, or precision for speed. In a way, it can be considered a shortcut."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Heuristic Function",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/billbeatthepeat.github.io\/2018\/heuristic-function\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/billbeatthepeat.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  607 ,
+  "url": "https:\/\/billbeatthepeat.github.io\/2018\/heuristic-function\/",
+  "datePublished": "2018-09-23T23:01:55\x2b00:00",
+  "dateModified": "2018-09-23T23:01:55\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Junbin Huang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/billbeatthepeat.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Junbin Huang"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://billbeatthepeat.github.io/">Junbin Huang</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/IMG_1825.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                Artificial Intelligence is the new electricity. -- Andrew Ng
+            
+        
+        </a></p>
+        </div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://billbeatthepeat.github.io/">Junbin Huang</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Heuristic Function</h1>
+        <div class="post-meta">
+                <span class="post-time">
+                    on <time datetime=2018-09-23 >23 September 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://billbeatthepeat.github.io/categories/machine-learning/"> Machine Learning </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                3 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>This blog is a simple summary about heuristic function for the lectrure CS118.</p>
+<h3 id="1-definition-of-heuristic-function">1. Definition of Heuristic function</h3>
+<p>According to the <a href="https://en.wikipedia.org/wiki/Heuristic_(computer_science)">Wikipedia</a>, a heuristic method in computer science, especially in artificial intelligence, is a function used to boost the speed of solving a problem or finding an approximate solution when classic methods fails to find any exact solution. &ldquo;This is achieved by trading optimality, completeness, <a href="https://en.wikipedia.org/wiki/Accuracy_and_precision">accuracy</a>, or <a href="https://en.wikipedia.org/wiki/Accuracy_and_precision">precision</a> for speed. In a way, it can be considered a shortcut.&rdquo;</p>
+<p>Thus, a heuristic function is a method of ranking the alternatives in search algorithm with weights or costs at each branching step. This function is built based on available information for every state in the search problem and can be used to decide which branch to stick on. To be concrete, heuristics are just functions that take search states and return numbers that estimate the cost to a nearest goal. More effective heuristics will return values closer to the actual goal costs. To be <em>admissible</em>, the heuristic values must be lower bounds on the actual shortest path cost to the nearest goal (and non-negative). To be <em>consistent</em>, it must additionally hold that if an action has cost <em>c</em>, then taking that action can only cause a drop in heuristic of at most <em>c</em>.</p>
+<p>The heuristic function cost is <strong>F(n) = h(n) + g(n)</strong>.</p>
+<h3 id="2-heuristic-funtion-in-a-searching-algorithm">2. Heuristic funtion in A* searching algorithm</h3>
+<p>A heuristic <em>h(n)</em> can be used to control the actual searching path of A* algorithm. Actually, the heuristic function is not doing the optimization job, but force the A* algorithm to spend less time on exploring new node in the graph when finding the optimal path. It is more like a restriction. When we do searching without heuristic function, or provided with a trivial heuristic which return zero everywhere, the A* algorithm will degenerate into Uninformed Cost Search (UCS) like Dijkstra&rsquo;s algorithm.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li>When <em>h(n)</em> is always 0, then it will return g(n). A* degenerates to Dijkstra&rsquo;s algorithm but can still promise on finding the shortest path.</li>
+<li>If the value of h(n) is always lower than the actual cost to the goal, A* can find a shortest path. The lower h(n) is, the more nodes A* needs to explore.</li>
+<li>When h(n) is equal to the actual cost of moving to the goal point, A* algorithm will find out the shortest path without exploring any extra node. The A* will become perfect.</li>
+<li>When h(n) is higher than the actual cost to goal, A* cannot promise on finding optimal solution but can run fast.</li>
+<li>When h(n) is far greater than the actual cost, A* algorithm will become the Greedy Best First Seach.</li>
+</ul>
+<p><strong>Trade off</strong></p>
+<p>According to Wikipedia:</p>
+<ul>
+<li><em>Optimality:</em> When several solutions exist for a given problem, does the heuristic guarantee that the best solution will be found? Is it actually necessary to find the best solution?</li>
+<li><em>Completeness:</em> When several solutions exist for a given problem, can the heuristic find them all? Do we actually need all solutions? Many heuristics are only meant to find one solution.</li>
+<li><em>Accuracy and precision:</em> Can the heuristic provide a <a href="https://en.wikipedia.org/wiki/Confidence_interval">confidence interval</a> for the purported solution? Is the error bar on the solution unreasonably large?</li>
+<li><em>Execution time</em>: Is this the best known heuristic for solving this type of problem? Some heuristics converge faster than others. Some heuristics are only marginally quicker than classic methods.</li>
+</ul>
+<p>When h(n) is suitable, we can find out the shortest path very fast. When h(n) is relatively lower, we can still get the shortest path but the algorithm will be slow. When it is too high, we give up on the shortest path but can get a faster speed.</p>
+<p>Reference:</p>
+<p>1.<a href="https://en.wikipedia.org/wiki/Heuristic_(computer_science)">Wikipedia</a></p>
+<p>2.http://blog.jobbole.com/84694/</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Junbin Huang </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>607</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fheuristic-function%2f&amp;text=Heuristic%20Function&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fheuristic-function%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2018%2fheuristic-function%2f&amp;title=Heuristic%20Function" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://billbeatthepeat.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://billbeatthepeat.github.io/2018/logistic-regression-derived-from-linear-regression/" class="prev" rel="prev" title="Logistic Regression Derived From Linear Regression"><i class="iconfont icon-dajiantou"></i>&nbsp;Logistic Regression Derived From Linear Regression</a>
+         
+        
+        <a href="https://billbeatthepeat.github.io/2018/understanding-of-convolutional-layer/" class="next" rel="next" title="Understanding of Convolutional Layer">Understanding of Convolutional Layer&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'jhuan129';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://billbeatthepeat.github.io/">Junbin Huang</a> | </span>
+         
+
+		  <span>Supported by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

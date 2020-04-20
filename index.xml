@@ -1,0 +1,85 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Junbin Huang on Junbin Huang</title>
+    <link>https://billbeatthepeat.github.io/</link>
+    <description>Recent content in Junbin Huang on Junbin Huang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Apr 2020 19:27:30 -0700</lastBuildDate>
+    <atom:link href="https://billbeatthepeat.github.io/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://billbeatthepeat.github.io/posts/</link>
+      <pubDate>Sun, 19 Apr 2020 19:27:30 -0700</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billbeatthepeat.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/about/</guid>
+      <description>&lt;h2 id=&#34;micheal-junbin-huang-黄俊斌&#34;&gt;&lt;img src=&#34;https://billbeatthepeat.github.io/images/IMG_1825.png&#34; alt=&#34;avatar&#34;&gt;&lt;br&gt;
+(Micheal) Junbin Huang (黄俊斌)&lt;/h2&gt;
+&lt;h4 id=&#34;currently-working-as-sde-in&#34;&gt;Currently working as SDE in:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/ebs/&#34;&gt;Amazon AWS EBS&lt;/a&gt;, Server team&lt;/li&gt;
+&lt;li&gt;Seattle, USA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;graduate-from&#34;&gt;Graduate from:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Johns Hopkins University&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Department of Computer Science&lt;/li&gt;
+&lt;li&gt;Baltimore, MD 21218&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shanghai Jiao Tong University&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Department of Electrical Engineering&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://bcmi.sjtu.edu.cn/&#34;&gt;Center for Brain-like Computing and Machine Intelligence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;800# Dongchuan Rd, Minhang Dist, Shanghai, China, 200240&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;contact&#34;&gt;Contact:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: huangjuibin(at)outlook(dot)com / jhuan129(at)jhu(dot)edu&lt;/li&gt;
+&lt;li&gt;WeChat: H413068712 or &lt;a href=&#34;IMG_3092.JPG&#34;&gt;QR code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Hello/ 你好！&lt;/p&gt;
+&lt;p&gt;I am (Micheal) Junbin Huang, &lt;del&gt;graduated from Shanghai Jiao Tong University, major in Electrical Power Engineering and Automation.&lt;/del&gt; Now I am working in Amazon AWS for the EBS Server Stats team &lt;del&gt;taking my master degree of Computer Science in Johns Hopkins University&lt;/del&gt;!&lt;/p&gt;
+&lt;p&gt;In recent years, deep neural network have achieved great success in various domains, particularly in tasks in volving visual and speech information, leading to the hot wave of deep learning. Occasionally I have access to Machine Learning and Data Mining. I found that I have been deeply attracted to the data world. &lt;del&gt;So I am planning to apply for the master degree intern in Computer Science specified in Machine Learning / Data Science track or SDE in US&lt;/del&gt;.&lt;/p&gt;
+&lt;p&gt;I was  advised by &lt;a href=&#34;http://bcmi.sjtu.edu.cn/~blu/&#34;&gt;Prof. Baoliang Lu&lt;/a&gt; working on Emotion Recognition during my undergraduate. I have taken the internship as Algorithm Engineer in &lt;a href=&#34;https://www.trip.com/?locale=en_US&#34;&gt;Ctrip.com&lt;/a&gt; and as Data Scientist in the Data lab in &lt;a href=&#34;http://maxtropy.io/&#34;&gt;Maxtropy Co.Ltd&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am interestd in Machine Learning algorithm/application, Data Mining and Data Engineering.&lt;/p&gt;
+&lt;p&gt;Here is my &lt;a href=&#34;https://billbeatthepeat.github.io/CV/&#34;&gt;curriculum vitae&lt;/a&gt; and my &lt;a href=&#34;https://billbeatthepeat.github.io/Resume/&#34;&gt;resume&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please feel free to contact me via WeChat or Email.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billbeatthepeat.github.io/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/cv/</guid>
+      <description>&lt;h2 id=&#34;curriculum-vitae&#34;&gt;Curriculum Vitae&lt;/h2&gt;
+
+&lt;object data=&#34;/PDF/cv.pdf&#34; type=&#34;application/pdf&#34; width=&#34;700px&#34; height=&#34;700px&#34;&gt; 
+    &lt;embed src=&#34;https://billbeatthepeat.github.io/PDF/cv.pdf&#34;&gt; 
+     This browser does not support PDFs. Please download the PDF to view it: &lt;a href=&#34;https://billbeatthepeat.github.io/PDF/cv.pdf&#34;&gt;Download PDF&lt;/a&gt;.&lt;/p&gt; 
+    &lt;/embed&gt; 
+&lt;/object&gt; 
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

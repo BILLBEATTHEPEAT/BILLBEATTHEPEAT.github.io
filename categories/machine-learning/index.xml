@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Junbin Huang</title>
+    <link>https://billbeatthepeat.github.io/categories/machine-learning/</link>
+    <description>Recent content in Machine Learning on Junbin Huang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 09 Mar 2019 22:34:10 +0000</lastBuildDate>
+    
+	<atom:link href="https://billbeatthepeat.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is the &#39;Risk&#39; in ML</title>
+      <link>https://billbeatthepeat.github.io/2019/what-is-the-risk-in-ml/</link>
+      <pubDate>Sat, 09 Mar 2019 22:34:10 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2019/what-is-the-risk-in-ml/</guid>
+      <description>Here is a review notes of Machine Learning.
+There are several ways to measure the performance of ML. One is using loss function to measure the closeness between prediction output with the ground truth. The second way doesn’t just want the prediction of one test data but all the possible input from (X,Y)∼PXY(X,Y) \sim P_{XY}. So given a cell draw randomly from the distribution the perform of this model can be represent as the Risk which is the average of the performance:</description>
+    </item>
+    
+    <item>
+      <title>Regularization in Deep Learning</title>
+      <link>https://billbeatthepeat.github.io/2018/regularization-in-deep-learning/</link>
+      <pubDate>Tue, 16 Oct 2018 23:14:02 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2018/regularization-in-deep-learning/</guid>
+      <description>0. Definition of Regularization One of the main goal in machine learning is to not only perform great in tranining set, but also get a good generalization in any test set. According to the book Deep Learning, regularization in deep learning can be described as an modification in learning model aims at reducing generalization error but not training error. Generally, there are two ways of adding regularization in the network. One is to apply extra restrction on the parameters, like $L_1$ and $L_1$, the other is to add an extra iterm in the objective funtions, like $Dropout$.</description>
+    </item>
+    
+    <item>
+      <title>Understanding of Convolutional Layer</title>
+      <link>https://billbeatthepeat.github.io/2018/understanding-of-convolutional-layer/</link>
+      <pubDate>Fri, 05 Oct 2018 10:29:52 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2018/understanding-of-convolutional-layer/</guid>
+      <description>This is a note of the basic knowledge of Convolutional layer in CNN.
+Mostly from reference: 能否对卷积神经网络工作原理做一个直观的解释？ - Owl of Minerva的回答 - 知乎 https://www.zhihu.com/question/39022858/answer/224446917
+Partly from notes of book Deep Learning
+ 1. Nature of the convolutional layer Picture can be stored as a map of values with several channels (1-3, 1 when it is a gray pic, 3 when it is a color picture represent RGB channels). This map of values can be seen as a matrix.</description>
+    </item>
+    
+    <item>
+      <title>Heuristic Function</title>
+      <link>https://billbeatthepeat.github.io/2018/heuristic-function/</link>
+      <pubDate>Sun, 23 Sep 2018 23:01:55 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2018/heuristic-function/</guid>
+      <description>This blog is a simple summary about heuristic function for the lectrure CS118.
+1. Definition of Heuristic function According to the Wikipedia, a heuristic method in computer science, especially in artificial intelligence, is a function used to boost the speed of solving a problem or finding an approximate solution when classic methods fails to find any exact solution. &amp;ldquo;This is achieved by trading optimality, completeness, accuracy, or precision for speed. In a way, it can be considered a shortcut.</description>
+    </item>
+    
+    <item>
+      <title>Logistic Regression Derived From Linear Regression</title>
+      <link>https://billbeatthepeat.github.io/2018/logistic-regression-derived-from-linear-regression/</link>
+      <pubDate>Sat, 13 Jan 2018 13:14:50 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2018/logistic-regression-derived-from-linear-regression/</guid>
+      <description>Logistics Regression 的推导（from Linear Regression） 线性回归和逻辑回归是机器学习算法中常用的两种算法，分别用于回归预测和分类问题。对于回归问题，当回归的目标变量变为离散且有限的变量时，回归问题就可以简化为分类问题，故而分类问题可以看作是回归问题在某种条件下的特例。故而，我们也可以从一些回归问题的模型中推导出分类问题的模型。本文中就将从回归问题中的简单模型 —— 线性回归（linear regression）推导出简单的分类模型逻辑回归（logistic regression）。
+在简单的二分类问题中，目标值分别为 1 和 0 （或 1 和 -1）。故而可以将这种二分类任务简单地理解成估计某一事件发生的概率 P，通过对这一概率的大小的区别来达到分类的目的。因此，根据概率的定义，模型输出值$y_i$的取值范围必须满足$$0 &amp;lt; y_i &amp;lt; 1,\ 且 \sum_i y_i = 1.$$
+然而，根据我们对线性回归模型的了解:$$P = f_\theta(x) = \theta^T x,$$输出值的范围应该是在$[-inf, +inf]$之间，很明显不满足于分类，尤其是二分类问题的要求。 所以为了使得线性模型在分类问题中可用，我们应该对其输出值做出限定，即：$$logistic(x) = g(f_\theta (x)) = g(\theta^T x)$$。接下来是对$g(x)$的推导。
+我们可以从反面考虑，通过对分类模型的因变量值域限制的移除进行变换来反推出我们所需要的$g(x)$。
+首先，选用优势比 Odds 代替概率。优势比就是时间发生概率和不发生概率之间的比值，记作：$$odds = \frac{P}{1-P}$$。通过改变换，我们可以将[0,1]之间的任意数映射到[0, +inf]之间的任意实数。但是线性回归的输出还可以是负数，故而还需要另一步变换将[0,inf]的实数域映射到整个实数域空间。
+在众多非线性函数中，log函数的值域为整个实数域且单调，因此可以通过计算优势比的对数，得到前面所需要的变换： $$\eta = log(odds) = log\frac{P}{1-P} = logit(P),$$ 其中logit函数表示分对数。经过以上两步，我们已经将因变量的值域限制去掉，即将因变量的值域[0，1]，映射到了一个[-inf, +inf]上。如果概率等于0，那么优势比为0，logit的值为-inf；如果概率等于1，那么优势比为+inf，logit的值也为+inf，当概率值小于0.5时，logit的值为负数，反之，为正数。
+接着，我们可以通过反推，从线性回归的模型函数中得到逻辑回归的模型的数学表达： $$logit(p) = log(\frac{p}{1-p}) = \eta = f_\theta(x) = \theta^T x,$$ $$\Rightarrow p = g(x) = antilogit(x)$$ $$\Rightarrow \frac{p}{1-p} = e^\eta$$ $$\Rightarrow p = \frac{e^\eta}{1 + e^\eta} = \frac{e^{\theta^T \cdot x}}{1 + e^{\theta^T \cdot x}} = sigmoid(x)$$</description>
+    </item>
+    
+    <item>
+      <title>Ensemble Methods</title>
+      <link>https://billbeatthepeat.github.io/2017/ensemble-methods/</link>
+      <pubDate>Thu, 12 Oct 2017 11:25:04 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2017/ensemble-methods/</guid>
+      <description>This blog is a simple summary of the ensemble methods.
+1. Basic methods for ensemble 1.1 Voting Voting is to get the ensemble result of a classification problem by gethering all the results from each classifier. And then make the label with most votes the final result.
+1.2 Averaging Averaging is to take the mathematical average of all the output of regressors to be the final result of a regression problem.</description>
+    </item>
+    
+    <item>
+      <title>Attention in Deep Learning</title>
+      <link>https://billbeatthepeat.github.io/2017/attention-in-deep-learning/</link>
+      <pubDate>Mon, 25 Sep 2017 18:16:28 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2017/attention-in-deep-learning/</guid>
+      <description>This article is a digest/note for the blog of Denny Britz: Attention ad Memory in Deep Learning and NLP.
+ In Neural Machine Translation system, we map the meaning of a sentence into a fixed-length vector representation and then generate a translation base on it.
+The first word of English translation is probably highly correlated ith the first word of the source sentence. Researches have found that reversing the source sequence (feeding it backwards into the encoder) produce significantly better results because it shorten the path from the decoder to the relevan parts of encoder.</description>
+    </item>
+    
+    <item>
+      <title>Activations in Neural Network</title>
+      <link>https://billbeatthepeat.github.io/2017/activations-in-neural-network/</link>
+      <pubDate>Fri, 15 Sep 2017 11:31:38 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2017/activations-in-neural-network/</guid>
+      <description>Instruction All of us have encountered with the problem of choosing an activation function during the building of neural network models. But what is activation functions, why we should use them and which should we choose in the network? Here is some of the summary or notes wrote after reading the blog and the discussion.
+0. Structure  What? Why? Which? Reference  1. What is Activation Function  In biologically inspired neural networks, the activation function is usually an abstraction representing the rate of action potential firing in the cell.</description>
+    </item>
+    
+    <item>
+      <title>Trade-off of Batch Size</title>
+      <link>https://billbeatthepeat.github.io/2017/trade-off-of-batch-size/</link>
+      <pubDate>Fri, 08 Sep 2017 16:26:05 +0000</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2017/trade-off-of-batch-size/</guid>
+      <description>According to the answer on Quora, the affection of batch size in the training of ANN are mainly two points:
+ Reduce the variance of the stochastic gradient updates. By taking average of some functions over each training example in the batch, using mini-batches can efficiently reduce the noise of finding the best direction to take. As we know, SGD needs to find the way out to make steepest descent in gradient.</description>
+    </item>
+    
+  </channel>
+</rss>

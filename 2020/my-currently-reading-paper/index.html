@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="google-site-verification" content="dzraMol4fk4b15wv9pMw_wWCtD8m61QU4tGK-3BFGLQ" />
+  
+  
+  
+  <meta name=”baidu-site-verification” content="gvezHX9CB4" />
+  <link rel="prev" href="https://billbeatthepeat.github.io/2019/what-is-the-risk-in-ml/" />
+  <link rel="next" href="https://billbeatthepeat.github.io/2020/mordern-art-ideas/" />
+  <link rel="canonical" href="https://billbeatthepeat.github.io/2020/my-currently-reading-paper/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           My Currently Reading Papers | Junbin Huang
+       
+  </title>
+  <meta name="title" content="My Currently Reading Papers | Junbin Huang">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My Currently Reading Papers"/>
+<meta name="twitter:description" content="I create this page to write down some notes and reflection about the research paper/blog I have read. Here are some of the most useful ones gathering from the recent project I am working on. They are separated by topics and projects. Some of the titles are followed by my brief comment which describe the mainly reason I choose them to put down here.
+The Emotion Recognition   Zheng W L, Lu B L."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "My Currently Reading Papers",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/billbeatthepeat.github.io\/2020\/my-currently-reading-paper\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/billbeatthepeat.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  2506 ,
+  "url": "https:\/\/billbeatthepeat.github.io\/2020\/my-currently-reading-paper\/",
+  "datePublished": "2020-04-19T14:43:19\x2b00:00",
+  "dateModified": "2020-04-19T14:43:19\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Junbin Huang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/billbeatthepeat.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Junbin Huang"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://billbeatthepeat.github.io/">Junbin Huang</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/IMG_1825.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                Artificial Intelligence is the new electricity. -- Andrew Ng
+            
+        
+        </a></p>
+        </div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://billbeatthepeat.github.io/">Junbin Huang</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">My Currently Reading Papers</h1>
+        <div class="post-meta">
+                <span class="post-time">
+                    on <time datetime=2020-04-19 >19 April 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://billbeatthepeat.github.io/categories/top/"> Top </a>
+                        <a href="https://billbeatthepeat.github.io/categories/reading/"> Reading </a>
+                        <a href="https://billbeatthepeat.github.io/categories/tasks/"> Tasks </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                12 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/paper.JPG" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>I create this page to write down some notes and reflection about the research paper/blog I have read. Here are some of the most useful ones gathering from the recent project I am working on. They are separated by topics and projects. Some of the titles are followed by my brief comment which describe the mainly reason I choose them to put down here.</p>
+<h3 id="the-emotion-recognition">The Emotion Recognition</h3>
+<ol>
+<li>
+<p>Zheng W L, Lu B L. Investigating critical frequency bands and channels for EEG-based emotion recognition with deep neural networks[J]. IEEE Transactions on Autonomous Mental Development, 2015, 7(3): 162-175.</p>
+<ul>
+<li>Talking about the critical frequency bands in the emotion recognition. These bands are: Delta, Theta, Alpha, Beta and Gamma.</li>
+</ul>
+</li>
+<li>
+<p>Zong C, Chetouani M. Hilbert-Huang transform based physiological signals analysis for emotion recognition[C]//Signal processing and information technology (isspit), 2009 ieee international symposium on. IEEE, 2009: 334-339.</p>
+<ul>
+<li>Applied Hilbert-Huang Transform into feature extraction when doing emotion recognition.</li>
+<li>Extracted features from both the fission and fuision procedures. Regarded the statistic values like root mean square and the like as the feature of each IMF.</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h3 id="the-sleep-stage-scoringdetection-based-on-biological-signal">The Sleep Stage Scoring/Detection Based on Biological Signal</h3>
+<ol>
+<li>
+<p>Ronzhina M, Janoušek O, Kolářová J, et al. Sleep scoring using artificial neural networks[J]. Sleep medicine reviews, 2012, 16(3): 251-263.</p>
+<ul>
+<li>Like a review of the sleep stage scoring using EEG signals. It contains almost the most-used methods of feature extraction. And separate them into 3 part: time domain, frequency or time-frequency domain, and non-linear feature.</li>
+<li>The most useful part of this paper is the summary of feature. Contains features like Hjorth parameters.</li>
+</ul>
+</li>
+<li>
+<p>Ren Y, Wu Y. Convolutional deep belief networks for feature extraction of EEG signal[C]//Neural Networks (IJCNN), 2014 International Joint Conference on. IEEE, 2014: 2850-2853.</p>
+<ul>
+<li>Using DBN to extract features from EEG signals. It works like an Auto-encoder.</li>
+<li>The convolutional DBN works with max-pooling layers in order to reduce the dimensions.</li>
+</ul>
+</li>
+<li>
+<p>Chapotot F, Becq G. Automated sleep–wake staging combining robust feature extraction, artificial neural network classification, and flexible decision rules[J]. International Journal of Adaptive Control and Signal Processing, 2010, 24(5): 409-423.</p>
+<ul>
+<li>Detailed explanation and description of the Candidate feature extraction. It also revel the importance/scores of some features.</li>
+<li>Hjorth activity &amp; mobility, Sigma relative power, Beta relative power and spectral edge frequency 95% are the top-ranked ones.</li>
+<li>The specral edge frequency could be set to 50%. I think this will work better.</li>
+</ul>
+</li>
+<li>
+<p>Ebrahimi F, Mikaeili M, Estrada E, et al. Automatic sleep stage classification based on EEG signals by using neural networks and wavelet packet coefficients[C]//Engineering in Medicine and Biology Society, 2008. EMBS 2008. 30th Annual International Conference of the IEEE. IEEE, 2008: 1151-1154.</p>
+<ul>
+<li>A great paper talking about sleep stage classification using feature extracted from the energy and Wavelet Package transform of the EEG signal.</li>
+<li>Talk about the selection of Wavelet and number of level. Especially, the paper extract the &ldquo;mean quadratic value&rdquo; from the Wavelet coefficient as its energy form.</li>
+</ul>
+</li>
+<li>
+<p>Losonczi L, Bako L, Brassai S T, et al. Hilbert-Huang transform used for EEG signal analysis[C]//The International Conference Interdisciplinarity in Engineering INTER-ENG. Editura Universitatii&rdquo; Petru Maior&rdquo; din Tirgu Mures, 2012: 361.</p>
+<ul>
+<li>Applying Hilbert-Huang Transform to the processing of EEG signal.</li>
+</ul>
+</li>
+<li>
+<p>Li Y, Yingle F, Gu L, et al. Sleep stage classification based on EEG Hilbert-Huang transform[C]//Industrial Electronics and Applications, 2009. ICIEA 2009. 4th IEEE Conference on. IEEE, 2009: 3676-3681.</p>
+<ul>
+<li>The only merit is describe about the Energy form of Hilbert Huang Transform as features of EEG signals.</li>
+</ul>
+</li>
+<li>
+<p>Subasi A, Gursoy M I. EEG signal classification using PCA, ICA, LDA and support vector machines[J]. Expert Systems with Applications, 2010, 37(12): 8659-8666.
+MLA</p>
+<ul>
+<li>Applied PCA, ICA, LDA to decompose the feature of EEG and used the output to do seizure classification.</li>
+<li>The LDA algorothm got the best score.</li>
+</ul>
+</li>
+<li>
+<p>Dong H, Supratak A, Pan W, et al. Mixed Neural Network Approach for Temporal Sleep Stage Classification[J]. IEEE Transactions on Neural Systems and Rehabilitation Engineering, 2017.</p>
+<ul>
+<li>Newly published paper talked about applying NN aproach to deal with sleep stage classification problem with singal-channel EEG model.</li>
+<li>Applied STFT with moving window of 5 second with 70% overlap to reduce the 30 seconds segment of original EEG signals.</li>
+<li>Calculate PSD by summing up the amplitude value at each frequency of the windows after Fourier transform.</li>
+<li>Extracted the statistic features of the spectral power at each small windows. Because the auther believe taht some features such as the averge and median can reveal some useful biological information.</li>
+<li>After the implementation of this paper&rsquo;s work in my own job of sleep stage classification, I found that the statistic features generated from the small moving window&rsquo;s PSD result (where I used Welch&rsquo;s method with 50 percent overlap to calculate this result instead of the method uesd in the paper) is very useful. These features are able to tell us the information about K complexes, vertex shape waves, sleep spindle and the like.</li>
+</ul>
+</li>
+<li>
+<p>Nakamura T, Adjei T, Alqurashi Y, et al. Complexity science for sleep stage classification from EEG[C]//Neural Networks (IJCNN), 2017 International Joint Conference on. IEEE, 2017: 4387-4394.</p>
+<ul>
+<li>Improved the classification between N1 and R stage.</li>
+<li>Applied Structural Complexity Analysis on sleep stage classification from EEG.</li>
+<li>Used multi-scale entropy (MSE) method to measure the structural complexity in the EEG series.</li>
+<li>Generated the MSE based on a coarse-grained time series {y(t)}. This is achieved by dividing a given EEG signal into a overlapping/non-overlapping windows of length of t, and by averaging over this window.</li>
+<li>Calculated MSE for evaluating multi-scale complexity using fuzzy entropy (FE) and permutation entropy (PE).</li>
+<li>Since the epoch-base criteria are often dependent on the preceding and follwoing peochs, enlarged the epoch size from 30 seconds to 90 seconds. This means to concatenate the current epoch with the preceding and follwing  30 seconds data for analysis.</li>
+<li>Applied Spectral Edge Frequency of 95%, 50% and the difference between them as features.</li>
+</ul>
+</li>
+<li>
+<p>Suzuki Y, Sato M, Shiokawa H, et al. MASC: Automatic Sleep Stage Classification Based on Brain and Myoelectric Signals[C]//Data Engineering (ICDE), 2017 IEEE 33rd International Conference on. IEEE, 2017: 1489-1496.</p>
+<ul>
+<li>Proposed a novel method for re-classify sleep stages only for the results with low-confidence.</li>
+<li>Considered the temporal sleep stage transitions.</li>
+</ul>
+</li>
+<li>
+<p>da Silveira T L T, Kozakevicius A J, Rodrigues C R. Single-channel EEG sleep stage classification based on a streamlined set of statistical features in wavelet domain[J]. Medical &amp; biological engineering &amp; computing, 2017, 55(2): 343-352.</p>
+<ul>
+<li>Described how to extract features from EEG signals in the wavelet domain.</li>
+<li>Used both the DTW and CWT with different features.</li>
+<li>Extracted variance, kurtosis and skewness from the DWT and Renyi&rsquo;s entropy from CWT.</li>
+</ul>
+</li>
+<li>
+<p>Hassan A R, Bhuiyan M I H. Computer-aided sleep staging using complete ensemble empirical mode decomposition with adaptive noise and bootstrap aggregating[J]. Biomedical Signal Processing and Control, 2016, 24: 1-10.</p>
+<ul>
+<li>Applied Complete Ensemble Empirical Mode Decomposition with Adaptive Noise to EEG signals.</li>
+<li>Compared the difference between EMD, EEMD and CEEMDAN.</li>
+<li>Calculated the higher oder statistical features from the transformed EEG signals like variance, mean, skewness and kurtosis.</li>
+</ul>
+</li>
+<li>
+<p>Chambon S, Galtier M, Arnal P, et al. A deep learning architecture for temporal sleep stage classification using multivariate and multimodal time series[J]. arXiv preprint arXiv:1707.03321, 2017.</p>
+<ul>
+<li>Applied deep learning approach (CNNs etc) to learn end-to-end without computing specific features.</li>
+<li>Separated EEG/EOG with EMG to generate multivariate models.</li>
+<li>Tested that one minute of data before and after each data segment offers the best improvement.</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h3 id="short-term-rainfall-nowcasting">Short-term Rainfall Nowcasting</h3>
+<ol>
+<li>
+<p>Xingjian S H I, Chen Z, Wang H, et al. Convolutional LSTM network: A machine learning approach for precipitation nowcasting[C]//Advances in neural information processing systems. 2015: 802-810.</p>
+<ul>
+<li>Proposed a new network structure, combined the convolutional network and the LSTM network. It take the advantage of these two structures. It is a good way to analyze the spatio-temporal data, especially with the data which can generate meaningful pictures.</li>
+<li>The convLSTM layers can be found in keras package. It can converge quickly and maintain stable.</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h3 id="generative-adversarial-networks">Generative Adversarial Networks</h3>
+<ol>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/24767059">Blog on Zhihu</a> discuss about the fundamental theory of GAN and give a simple demo of network.</p>
+</li>
+<li>
+<p>Blog on Zhihu <a href="https://zhuanlan.zhihu.com/p/22386494">[1]</a><a href="https://zhuanlan.zhihu.com/p/22389906">[2]</a> talk about DCGAN and a demo on <a href="https://github.com/jacobgil/keras-dcgan">Github</a> (by keras).</p>
+</li>
+<li>
+<p>Goodfellow I, Pouget-Abadie J, Mirza M, et al. Generative adversarial nets[C]//Advances in neural information processing systems. 2014: 2672-2680.</p>
+<ul>
+<li>The paper talks about GAN.</li>
+<li>The training procedure for generator G is to maximize the probability of discriminator D making a mistake. In the space of arbitrary function G and D, a unique solution exists, with G recovering the training data distribution and D equal to 1/2 everywhere.</li>
+<li>The GAN model is no need for any Markov Chains or unrolled approximate inference networks during either training or generation of samples.</li>
+<li>When training the model, G must not be trained too much without updating D, in order to avoid &ldquo;the Helvetica scenario&rdquo; in which G collapses too many values of z to the same value of x to have enough diversity to model p_data.</li>
+<li>Inner loop to optimize the discriminator during training is unallowed for computation. Plus, finite data set will lead to overfitting. So we can do an optimization operator for D after several steps of the optimization of G. As we update G slowly, D can remain at the nearby of the optimal solution.</li>
+<li>Summary on <a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2650731540&amp;idx=1&amp;sn=193457603fe11b89f3d298ac1799b9fd&amp;chksm=871b306ab06cb97c502af9552657b8e73f1f5286bc4cc71b021f64604fd53dae3f026bc9ac69&amp;scene=0&amp;key=65d8001a48e3b58beffef2b2464b6219ae5976804aa86d448d7dc87af7327d359de48dbeee43e345a97c4220356630eefe17265f8b413a4707dce41cba597e84d3714cfd9e4f36b82ec64df1b172f68d&amp;ascene=0&amp;uin=MTUyMjcyMDc0MA%3D%3D&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.11.6+build(15G1611)&amp;version=12020810&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=ADahuQo1DEeS4wOomHxkZCeLGf8wX3jGX3tFOCK1iD%2Fc0CNj2YXbCZ4dTJrudDFz">WeChat Blog</a>.</li>
+</ul>
+</li>
+<li>
+<p>Salimans T, Goodfellow I, Zaremba W, et al. Improved techniques for training gans[C]//Advances in Neural Information Processing Systems. 2016: 2234-2242.</p>
+<ul>
+<li>Useful techniques for training or modifying the GAN framework.</li>
+<li>Explained that training GANs requires finding a Nash equilibrium of a non-convex game with continuous, high-dimensional parameters. However, the simple gradient-based method may fail to converge.</li>
+<li>Feature matching: specifying a new objective for the generator that prevents it from overtraining on the current discriminator. This objective requires te generator to generate data that matches the expected value of the features on an intermediate layer of the discriminator.</li>
+<li>Minibatch discrimination: to avoid the independence when the discriminator processes each example and its consequence of leading to less diversity of the generator, add the closeness of each examples as additional features.</li>
+<li>Historical averaging: adding a normalization-like term in the cost function in order to find the equilibria.</li>
+<li>One-sided label smoothing: tuned the 0 and 1 targets for a classifier with  smoothed values, like 0.9 for the original 1.</li>
+<li>Virtual batch normalization: normalize each example based on the statistics collected on a fixed batch but not the original batch itself.</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h3 id="optimization-theory">Optimization Theory</h3>
+<ol>
+<li>
+<p>Blog of Sebastian Ruder&rsquo;s blog/arxiv <a href="http://ruder.io/optimizing-gradient-descent/">an overview of gradient descent optimization algorithm</a>.</p>
+<ul>
+<li>A very good blog describe the most popular optimization methods especially the gradient algorithm.</li>
+</ul>
+</li>
+<li>
+<p>Norm in the Machine Learning <a href="http://blog.csdn.net/zouxy09/article/details/24971995">blog</a></p>
+<ul>
+<li>Discussed about the L0, L1 and L2 norm in the Machine learning.</li>
+</ul>
+</li>
+<li>
+<p>When to use Adam and when to use SGD:https://zhuanlan.zhihu.com/p/32338983</p>
+<ul>
+<li>Detailed explain the improvement and purpose of each optimal function.</li>
+<li>Discussed when and how to use Adam and SGD.</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h3 id="computer-vision">Computer Vision</h3>
+<ol>
+<li>
+<p>Lecture slides of <a href="http://www.cse.psu.edu/~rtc12/CSE486/">CSE/EE 486</a>. Instructor: Robert Collins of CSE Department, Penn State University.</p>
+</li>
+<li>
+<p>Lecture slides of <a href="http://vision.stanford.edu/teaching/cs131_fall1617/schedule.html">CS 131 Computer Vision: Foundations and Applications, Fall 2016-2017</a>. Instructors: Prof. Fei-Fei Li and Dr. Juan Carlos Niebles of CS Department, Stanford Univ.</p>
+</li>
+<li>
+<p>Lowe D G. Object recognition from local scale-invariant features[C]//Computer vision, 1999. The proceedings of the seventh IEEE international conference on. Ieee, 1999, 2: 1150-1157.</p>
+<ul>
+<li>Proposed the Scale-Invariant-Feature-Transform algorithm in order to extract local features from images.</li>
+<li>Staged filterd approach. Get an smoothed image and then the Difference of Gaussian (DoG) of the filtered images by taking difference of images with different sigma.(The DoG procedure can be replaced by LoG)</li>
+<li>Select the extremum point in the local area by comparing the value of DoG of this point with the nearby
+8 points surrounding it and the other 9 points on the relative filterd image.</li>
+<li>Get the direction and magnitude of the gradient on that key point.</li>
+<li>Generate the key point descriptor by building a 128-dimension normalized vector.</li>
+<li>It is better to read this <a href="http://blog.csdn.net/abcjennifer/article/details/7639681">blog in Chinese</a> and the Wiki as supplementation.</li>
+</ul>
+</li>
+<li>
+<p>He K, Zhang X, Ren S, et al. Deep residual learning for image recognition[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 770-778.</p>
+<ul>
+<li>Reference: <a href="https://mp.weixin.qq.com/s?__biz=MzAwNDI4ODcxNA==&amp;mid=2652245691&amp;idx=1&amp;sn=ef3c8390fc9451d4a79b2477efa23e2b&amp;scene=0#wechat_redirect">Discussion about the Residual Network</a></li>
+<li>Briefly discussed about the algorithm and advantages utilized in the ResNet.</li>
+<li>Conducted the propagation in the residual network.</li>
+<li>Showed the topological explanation of the shortcut structure in the residual network.</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h3 id="natural-language-processing">Natural Language Processing</h3>
+<ol>
+<li>
+<p>Prabhavalkar R, Sainath T N, Li B, et al. An analysis of “attention” in sequence-to-sequence models,”[C]//Proc. of Interspeech. 2017.</p>
+<ul>
+<li>Summarized the attention-based models used in automatic speech recognition (ASR).</li>
+<li>Discussed the Full-Sequence attention and Limited-Sequence attention models.</li>
+<li>Discussed two methods of computing attention: dot-product attention and tanh attention.</li>
+</ul>
+</li>
+<li>
+<p>Smoothing algorithm for the N-gram model in NLP.</p>
+<ul>
+<li>Reference: <a href="https://blog.csdn.net/baimafujinji/article/details/51297802">自然语言处理中N-Gram模型的Smoothing算法</a></li>
+<li>Briefly described the smoothing algorithm and model for the N-grams in NLP. From the most simple one (Laplace method) to the most powerful one (Kneser-Ney Smoothing).</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h3 id="machine-learning--deep-learning-theory">Machine Learning / Deep Learning Theory</h3>
+<ol>
+<li>
+<p>Zhou Z H, Feng J. Deep forest: Towards an alternative to deep neural networks[J]. arXiv preprint arXiv:1702.08835, 2017.</p>
+<ul>
+<li>Proposed a novel deep-model: using adeptive cascaded random/completed random forest to build a model.</li>
+<li>Fewer hyper-parameters to be tuned. Its depth can be generated adaptively when training. What is more, because the BP algorithm does not applied in this model (the connection between cascaded forest, i.e. layers, only contains the output from the former one), the algorithm works with less computational facilitys.</li>
+<li>Applied two methods in this model: one is cascade, which learns from the connection from deep neural network; the other one is multi-grained scaling, which is  like the convolution method in CNN.</li>
+<li>A very good implementation of ensemble. It can be used in a lot of data competition.</li>
+<li>Work great in small-size data set.</li>
+</ul>
+</li>
+<li>
+<p>Softmax function and cross entropy, <a href="https://zhuanlan.zhihu.com/p/27223959">https://zhuanlan.zhihu.com/p/27223959</a>.</p>
+<ul>
+<li>Explicated the Maximun Likelihood Estimation, Softmax function, Relative Entropy (Kullback-Leibler Divergence) and Cross Entropy.</li>
+<li>Deduced the derivation of these functions and explained their relationship.</li>
+</ul>
+</li>
+<li>
+<p>Chen T, Guestrin C. Xgboost: A scalable tree boosting system[C]//Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining. ACM, 2016: 785-794.</p>
+<ul>
+<li>The paper describe the XGBoost model.</li>
+</ul>
+</li>
+<li>
+<p>Liu F T, Ting K M, Zhou Z H. Isolation forest[C]//Data Mining, 2008. ICDM&rsquo;08. Eighth IEEE International Conference on. IEEE, 2008: 413-422.</p>
+<ul>
+<li>Proposed a novel technology for abnormal detection using usupervised methods.</li>
+<li>The Isolation Forest is based on the noticable difference between the abnormal point values and the normal ones. And this is the distinguishable feature for the binary tree model to saperate the unusual point with few steps.</li>
+<li>As a personal experience, this algorithm is fast, and has a better performance than One-class SVM.</li>
+</ul>
+</li>
+<li>
+<p>Zaremba W, Sutskever I, Vinyals O. Recurrent neural network regularization[J]. arXiv preprint arXiv:1409.2329, 2014.</p>
+<ul>
+<li>Discussed how to apply dropout method into the RNN, especially LSTM mode.</li>
+<li>The main idea is to apply the dropout operator only to the non-recurrent connection.</li>
+<li>The dropout operator corrupts the information carried by the units, forcing them to perform their intermediate computations more robustly.</li>
+<li>The information is corrupted by the dropout operator exactly L+1 times and this number is independent of the number of timesteps traversed by the information.</li>
+<li>By not using dropout on the recurrent connections, the LSTM can benefit from dropout regularization without sacrificing its valuable memorization ability.</li>
+</ul>
+</li>
+<li>
+<p>Backpropagation algorithm: <a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2650731098&amp;idx=1&amp;sn=c7391caee3a567b4b046406d53f022f2&amp;chksm=871b3624b06cbf320f3725fe452d291e04a4a8c1beda8ee9e00f1d10266847be4736090aade3&amp;scene=21#wechat_redirect">discussion in Zhihu</a></p>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Junbin Huang </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>2506</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2020%2fmy-currently-reading-paper%2f&amp;text=My%20Currently%20Reading%20Papers&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillbeatthepeat.github.io%2f2020%2fmy-currently-reading-paper%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2020%2fmy-currently-reading-paper%2f&amp;title=My%20Currently%20Reading%20Papers" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://billbeatthepeat.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://billbeatthepeat.github.io/2019/what-is-the-risk-in-ml/" class="prev" rel="prev" title="What is the &#39;Risk&#39; in ML"><i class="iconfont icon-dajiantou"></i>&nbsp;What is the &#39;Risk&#39; in ML</a>
+         
+        
+        <a href="https://billbeatthepeat.github.io/2020/mordern-art-ideas/" class="next" rel="next" title="Mordern Art Ideas">Mordern Art Ideas&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'jhuan129';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://billbeatthepeat.github.io/">Junbin Huang</a> | </span>
+         
+
+		  <span>Supported by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
