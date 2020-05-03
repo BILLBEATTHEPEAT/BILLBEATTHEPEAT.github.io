@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="google-site-verification" content="dzraMol4fk4b15wv9pMw_wWCtD8m61QU4tGK-3BFGLQ" />
+  
+  
+  
+  <meta name=”baidu-site-verification” content="gvezHX9CB4" />
+  <link rel="prev" href="https://billbeatthepeat.github.io/2020/mordern-art-ideas/" />
+  <link rel="next" href="https://billbeatthepeat.github.io/2020/projects/" />
+  <link rel="canonical" href="https://billbeatthepeat.github.io/2020/structuring-machine-learning/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Structuring Machine Learning Project | Junbin Huang
+       
+  </title>
+  <meta name="title" content="Structuring Machine Learning Project | Junbin Huang">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Structuring Machine Learning Project"/>
+<meta name="twitter:description" content="Class: ENG Created: Apr 19, 2020 10:29 PM Materials: https://www.coursera.org/learn/machine-learning-projects/home/welcome Reviewed: No Source: Coursera
+Note from the Coursera course: Structuring Machine Learning Project
+Orthogonalization Definition: orthogonalization is the thought in tuning, in which situation each tuning knob can only does one thing.
+In ML project, we expect our algorithm can work well in 4 main goals:
+ low cost in training set; low cost in dev set; low cost in test set; performs well in real world  These 4 goals are hierarchical in a one by one order."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Structuring Machine Learning Project",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/billbeatthepeat.github.io\/2020\/structuring-machine-learning\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/billbeatthepeat.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  1281 ,
+  "url": "https:\/\/billbeatthepeat.github.io\/2020\/structuring-machine-learning\/",
+  "datePublished": "2020-05-03T10:59:01-07:00",
+  "dateModified": "2020-05-03T10:59:01-07:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Junbin Huang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/billbeatthepeat.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Junbin Huang"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://billbeatthepeat.github.io/">Junbin Huang</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://billbeatthepeat.github.io/">Junbin Huang</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories" title="">Categories</a>
+                
+                <a class="menu-item" href="/categories/top/" title="">Tops</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/cv" title="">CV</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Structuring Machine Learning Project</h1>
+        <div class="post-meta">
+                <span class="post-time">
+                    on <time datetime=2020-05-03 >3 May 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://billbeatthepeat.github.io/categories/machine-learning/"> Machine Learning </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                7 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>Class: ENG
+Created: Apr 19, 2020 10:29 PM
+Materials: <a href="https://www.coursera.org/learn/machine-learning-projects/home/welcome">https://www.coursera.org/learn/machine-learning-projects/home/welcome</a>
+Reviewed: No
+Source: Coursera</p>
+<p>Note from the Coursera course: Structuring Machine Learning Project</p>
+<h3 id="orthogonalization">Orthogonalization</h3>
+<p>Definition: orthogonalization is the thought in tuning, in which situation each tuning knob can only does one thing.</p>
+<p>In ML project, we expect our algorithm can work well in 4 main goals:</p>
+<ol>
+<li>low cost in training set;</li>
+<li>low cost in dev set;</li>
+<li>low cost in test set;</li>
+<li>performs well in real world</li>
+</ol>
+<p>These 4 goals are hierarchical in a one by one order. In practice of turning ML algorithm, we do have some techniques works orthogonal in achieving these four goals independently. Like using bigger/deeper network for goal #1, using regularization for goal #2, etc.</p>
+<blockquote>
+<p>In Andrew&rsquo;s view, early stopping has its own draw back in tuning which is because it affect both the goal #1 and #2.</p>
+</blockquote>
+<h3 id="single-real-number-evaluation-metric">Single real number evaluation metric</h3>
+<blockquote>
+<p>Trade-off between precision and recall:
+Precision is what % of the examples which have been classified positive are truly positive. Recall is what % of the positive examples have been classified positive successfully.</p>
+</blockquote>
+<p>To avoid struggling with the trade off, we should focus on one metric as possible. Like we should use F1 score instead of looking both P and R simultaneously.</p>
+<h3 id="satisficing-and-optimizing-metric">Satisficing and optimizing metric</h3>
+<p>Which means can combine some metrics into one cost function. Like we can set the optimize problem into:</p>
+<p>$$\max accuracy\ s.t.\ runningtime \le 100ms$$</p>
+<p>So if we have N metrics, we can pick the most prior one to be the optimizing one and the rest N-1 ones to be satisficing.</p>
+<h3 id="traindevtest-distributions">Train/dev/test distributions</h3>
+<p>Should find a way to make sure the dev and test set are from the same distribution. Having a defined dev set and single real value metric is like setting a target of the whole team. The team will focus on this target so if we make the distribution between dev and test as  closer as possible, we can save a lot of time in transferring from dev to test, and also make the effort of working on dev set more worthy.</p>
+<p>So, the guideline is: choose a dev set and test set to reflect data you expect to get in the future and consider important to do well on.</p>
+<p>We used to split the data into 60:20:20 for train:dev:test. However, in the are of big data, we can have larger fraction of the data goes to the training data as long as we have enough number of samples in dev/test set.</p>
+<p>For the test set, we need to set it to be big enough to give high confidence in the overall (unbias estimation) performance of the final system.</p>
+<h3 id="when-to-change-devtest-sets-and-metrics">When to change dev/test sets and metrics</h3>
+<p>Can use different weight in the loss function to punish the unwanted misclassification.
+If you find the evaluation metric is not giving the correct rank order preference for what is actually better algorithm, then it&rsquo;s the time to think about defining a new evaluation metric, or even with dev/test set.
+Beside set up a target correctly, there is a separately step which is to find a way to shoot/aim the target properly. Change the metric is just about the former goal, for the second one, we can apply the same technique (weighting for different sample) to the loss function.</p>
+<p>So, even in the very beginning we cannot define the perfect evaluation metric, just set something reasonable up quickly and use that to drive the speed of the team&rsquo;s iterating. And if later down the line we find out that it wasn&rsquo;t a good one, we can just change the idea at that time.</p>
+<h3 id="avoidable-bias">Avoidable bias</h3>
+<p>We can use the human performance in  our training as a metric to  chose our next step: whether to focus on bias (avoidable bias, which is the gap between the performance on training set and the human-level performance) reduction or variance reduction tactics. This is because the human performance can usually be seen as a good approximation of the Bayes Error.</p>
+<h3 id="error-analysis">Error Analysis</h3>
+<p>When we get a result that we are not so satisfied with, we can probably look at the dev examples to get insight of what we should do to improve and evaluate the ideas. Like we can get ~100 mislabeled dev set examples, and look into what are the  common characters among the majority of them and their proportion. This simple counting procedure error analysis can save a lot of time in terms of deciding what&rsquo;s the most important, or what&rsquo;s the most promising direction to focus on next. For several ideas to improve the performance, we can evaluate them in parallel.</p>
+<p>Beside improving the algorithm, we also need to make sure our labeling is correct. DL algorithms are quite robust to random errors in the training set, but less robust to systematic errors.</p>
+<p>Also we need to apply same process to dev and test sets to make sure they continue to came from the same distribution, like consider examining examples the algorithm got right as well as ones it got wrong.</p>
+<p>After correctness, sometimes we might have the train and dev/test sets come from different distribution.</p>
+<h3 id="get-first-system-quickly-and-iterate">Get first system quickly and iterate</h3>
+<p>/null</p>
+<h3 id="training-and-testing-on-different-distributions">Training and testing on different distributions</h3>
+<p>Should let the test/dev approximate the cases where we want the model to work on in real task (the production environment) as much as possible.</p>
+<p>When we found there is a big gap between the training set and the dev/test set but not sure if there is a difference in the distribution of them, what should we do? We can cut out part of the training set as a &ldquo;training-dev&rdquo; set, which has the same distribution as training set, but not used for training. We can use this training-dev set as well as the dev set to measure the performance of out model to see whether there is a mismatched data distribution or a variance/bias problem we need to improve.</p>
+<p>When it turns out that we do have a data mismatch problem, what should we do except regain a dataset?</p>
+<ol>
+<li>Carry out manual error analysis to try to understand difference between training and dev/test  sets.</li>
+<li>Make training data more similar; or collect more data similar to dev/test sets. ⇒ Artificial data synthesis. Has problem of sampling from just a small subset of the possible input examples and easily overfitting.</li>
+</ol>
+<h3 id="transfer-learning">Transfer Learning</h3>
+<p>When transfer learning make sense in A ⇒ B:</p>
+<ol>
+<li>Task A and B have the same input</li>
+<li>Have a lot more data for Task A then Task B</li>
+<li>Low level features from A could be helpful for learning B</li>
+</ol>
+<h3 id="multi-task-learning">Multi-task Learning</h3>
+<p>Not assigning a single label to a example, but going through the different classes and asking for each of the classes does that label appear in the example. So to dealing with this kind of problem, instead of build several networks each for one label, we can build a single network that is looking at each example and basically solving all labeling problems since some of the earlier features in neural network can be shared among these different labeling problems.</p>
+<p>Why multi-task learning make sense?</p>
+<ul>
+<li>Training on a set of tasks that could benefit from having shared lower-level features;</li>
+<li>Usually: Amount of data you have for each task is quite similar (so we can consider multi-task learning as a kind of transfer learning when the number of tasks is large enough. Then for one specific task we can say the rest of the tasks (larger dataset) are doing transfer learning to this one(small dataset))</li>
+<li>Can train a big enough neural network to do well on all the task (only when the neural network is big enough)</li>
+</ul>
+<h3 id="end-to-end-learning">End to End Learning</h3>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Junbin Huang </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>1281</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2020%2fstructuring-machine-learning%2f&amp;text=Structuring%20Machine%20Learning%20Project&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillbeatthepeat.github.io%2f2020%2fstructuring-machine-learning%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillbeatthepeat.github.io%2f2020%2fstructuring-machine-learning%2f&amp;title=Structuring%20Machine%20Learning%20Project" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://billbeatthepeat.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://billbeatthepeat.github.io/2020/mordern-art-ideas/" class="prev" rel="prev" title="Mordern Art Ideas"><i class="iconfont icon-dajiantou"></i>&nbsp;Mordern Art Ideas</a>
+         
+        
+        <a href="https://billbeatthepeat.github.io/2020/projects/" class="next" rel="next" title="Projects">Projects&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'jhuan129';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://billbeatthepeat.github.io/">Junbin Huang</a> | </span>
+         
+
+		  <span>Supported by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

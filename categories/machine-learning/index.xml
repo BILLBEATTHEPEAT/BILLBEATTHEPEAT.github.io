@@ -6,10 +6,23 @@
     <description>Recent content in Machine Learning on Junbin Huang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Mar 2019 22:34:10 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 10:59:01 -0700</lastBuildDate>
     
 	<atom:link href="https://billbeatthepeat.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Structuring Machine Learning Project</title>
+      <link>https://billbeatthepeat.github.io/2020/structuring-machine-learning/</link>
+      <pubDate>Sun, 03 May 2020 10:59:01 -0700</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/2020/structuring-machine-learning/</guid>
+      <description>Class: ENG Created: Apr 19, 2020 10:29 PM Materials: https://www.coursera.org/learn/machine-learning-projects/home/welcome Reviewed: No Source: Coursera
+Note from the Coursera course: Structuring Machine Learning Project
+Orthogonalization Definition: orthogonalization is the thought in tuning, in which situation each tuning knob can only does one thing.
+In ML project, we expect our algorithm can work well in 4 main goals:
+ low cost in training set; low cost in dev set; low cost in test set; performs well in real world  These 4 goals are hierarchical in a one by one order.</description>
+    </item>
     
     <item>
       <title>What is the &#39;Risk&#39; in ML</title>

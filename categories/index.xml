@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Junbin Huang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Apr 2020 14:32:50 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 10:59:01 -0700</lastBuildDate>
     
 	<atom:link href="https://billbeatthepeat.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://billbeatthepeat.github.io/categories/machine-learning/</link>
+      <pubDate>Sun, 03 May 2020 10:59:01 -0700</pubDate>
+      
+      <guid>https://billbeatthepeat.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tasks</title>
@@ -35,15 +44,6 @@
       <pubDate>Sun, 19 Apr 2020 14:43:19 +0000</pubDate>
       
       <guid>https://billbeatthepeat.github.io/categories/reading/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://billbeatthepeat.github.io/categories/machine-learning/</link>
-      <pubDate>Sat, 09 Mar 2019 22:34:10 +0000</pubDate>
-      
-      <guid>https://billbeatthepeat.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     

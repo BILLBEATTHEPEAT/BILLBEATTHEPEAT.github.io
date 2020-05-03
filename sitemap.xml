@@ -30,9 +30,65 @@
     </url>
   
     <url>
+      <loc>https://billbeatthepeat.github.io/categories/</loc>
+      
+      <lastmod>2020-05-03T10:59:01-07:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://billbeatthepeat.github.io/</loc>
       
-      <lastmod>2020-04-19T19:27:30-07:00</lastmod>
+      <lastmod>2020-05-03T10:59:01-07:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://billbeatthepeat.github.io/categories/machine-learning/</loc>
+      
+      <lastmod>2020-05-03T10:59:01-07:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://billbeatthepeat.github.io/posts/</loc>
+      
+      <lastmod>2020-05-03T10:59:01-07:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://billbeatthepeat.github.io/2020/structuring-machine-learning/</loc>
+      
+      <lastmod>2020-05-03T10:59:01-07:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -47,34 +103,6 @@
       <loc>https://billbeatthepeat.github.io/2020/mordern-art-ideas/</loc>
       
       <lastmod>2020-04-19T19:27:30-07:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://billbeatthepeat.github.io/posts/</loc>
-      
-      <lastmod>2020-04-19T19:27:30-07:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://billbeatthepeat.github.io/categories/</loc>
-      
-      <lastmod>2020-04-19T14:32:50-07:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -131,20 +159,6 @@
       <loc>https://billbeatthepeat.github.io/categories/reading/</loc>
       
       <lastmod>2020-04-19T14:43:19+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://billbeatthepeat.github.io/categories/machine-learning/</loc>
-      
-      <lastmod>2019-03-09T22:34:10+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
